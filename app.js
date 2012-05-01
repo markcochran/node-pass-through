@@ -35,6 +35,7 @@ app.get('/', routes.index);
 // Sockets
 io.sockets.on('connection', function (socket) {
   socket.on('update', function (data) {
+    console.log(data);
     socket.broadcast.emit('changed', data);
   });
 });
